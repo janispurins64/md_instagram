@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import render_template
+import os
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,9 +9,11 @@ def root():
   vards = request.args.get('vards', default = 'pasaule', type = str)
   return render_template('sveikaPasaule.html', vards = vards)
 
+#visi attēli ievietoti mapē static, apakšmapē pictures
 @app.route('/bildes')
 def visasBildes():
-  return render_template('home.html')
+  pictures = os.listdir('static/pictures/') 
+  return render_template("home.html", pictures=pictures)
 
 @app.route('/bilde/<bildesID>')
 def bilde(bildesID):
