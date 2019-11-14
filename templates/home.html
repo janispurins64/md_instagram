@@ -1,5 +1,10 @@
 <html>
   <body>
     <h1>Pēc tam šeit būs visas bildes no /bildes mapes</h1>
+    
+    <!-- Pagaidām tikai visi attēli bez jebkādiem komentāriem -->
+    {% for pic in pictures %}  
+      <img src='/static/pictures/{{pic}}'/>  
+    {% endfor %}  
   </body>
 </html>
