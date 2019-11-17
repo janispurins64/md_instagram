@@ -15,9 +15,11 @@ def visasBildes():
   pictures = os.listdir('static/pictures/') 
   return render_template("home.html", pictures=pictures)
 
-@app.route('/bilde/<bildesID>')
-def bilde(bildesID):
-  return render_template('bilde.html', bildesID = bildesID)
+@app.route('/bilde')
+def picture():
+  return render_template(
+    "bilde.html", picture = request.args.get('picture')
+  )
 
 @app.route('/komentari/<komentaraID>')
 def komentars(komentaraID):
