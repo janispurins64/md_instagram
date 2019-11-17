@@ -1,6 +1,7 @@
 <html>
   <body>
-    <h1>Ielādēju bildi ar ID {{ bildesID }}</h1>
+    <h1>Ielādēju bildi ar ID</h1>
+      <img src='/static/pictures/{{request.args.get('picture')}}' />
     <p>Šeit būs komentāri par bildi</p>
   </body>
 </html>
