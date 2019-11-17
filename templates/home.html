@@ -6,7 +6,7 @@
     Noklikšķinot uz attēla, atveras jauna lapa ar tikai šo attēlu. 
     Attēliem ir jāatrodas mapē static/pictures.-->
     {% for pic in pictures %}  
-      <a href="{{ url_for('picture', picture=pic) }}">
+      <a href="{{ url_for('bilde', picture=pic) }}">
         <img src='/static/pictures/{{pic}}' />  
       </a>
     {% endfor %}   
