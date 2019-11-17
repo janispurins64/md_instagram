@@ -2,7 +2,9 @@
   <body>
     <h1>Pēc tam šeit būs visas bildes no /bildes mapes</h1>
     
-    <!-- Pagaidām tikai visi attēli bez jebkādiem komentāriem. Noklikšķinot uz attēla, atveras jauna lapa ar tikai šo attēlu. -->
+    <!-- Pagaidām tikai visi attēli bez jebkādiem komentāriem. 
+    Noklikšķinot uz attēla, atveras jauna lapa ar tikai šo attēlu. 
+    Attēliem ir jāatrodas mapē static/pictures.-->
     {% for pic in pictures %}  
       <a href="{{ url_for('picture', picture=pic) }}">
         <img src='/static/pictures/{{pic}}' />  
