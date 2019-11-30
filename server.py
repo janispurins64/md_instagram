@@ -12,11 +12,13 @@ def root():
 #visi attēli ievietoti mapē static, apakšmapē pictures
 @app.route('/bildes')
 def visasBildes():
+  print('pieprasijums: /bildes')
   pictures = os.listdir('static/pictures/') 
   return render_template("home.html", pictures=pictures)
 
 @app.route('/bilde')
 def picture():
+  print('pieprasijums: /bilde')
   return render_template(
     "bilde.html", picture = request.args.get('picture')
   )
@@ -24,6 +26,7 @@ def picture():
 @app.route('/komentari/<komentaraID>')
 def komentars(komentaraID):
   atrastaisKomentars = ""
+  print('pieprasijums: /komentari/' + komentaraID)
   try:
     fp = open('komentari.txt')
     line = fp.readline()
@@ -41,6 +44,7 @@ def komentars(komentaraID):
 
 @app.route('/health')
 def health():
+  print('pieprasijums: /health')
   return "OK"
 
 if __name__ == '__main__':
